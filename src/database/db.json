@@ -1,0 +1,13 @@
+{
+  "users": [
+    {
+      "firstname": "a",
+      "lastname": "a",
+      "email": "a",
+      "password": "a",
+      "id": "24446a38-8efa-4937-9dfb-b6fbb015552e",
+      "createdAt": "1/12/2023, 11:32:09 PM",
+      "updatedAt": "1/12/2023, 11:32:09 PM"
+    }
+  ]
+}
