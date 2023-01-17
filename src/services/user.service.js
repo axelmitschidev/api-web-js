@@ -2,11 +2,19 @@ import { v4 as uuid } from 'uuid'
 import User from '../database/User.js'
 
 const getAllUsers = () => {
-  return User.getAllUsers()
+  try {
+    return User.getAllUsers()
+  } catch (error) {
+    throw error
+  }
 }
 
 const getOneUser = (userId) => {
-  return User.getOneUser(userId)
+  try {
+    return User.getOneUser(userId)
+  } catch (error) {
+    throw error
+  }
 }
 
 const createNewUser = (newUser) => {
@@ -16,7 +24,7 @@ const createNewUser = (newUser) => {
     createdAt: new Date().toLocaleString('en-US', { timeZone: 'UTC' }),
     updatedAt: new Date().toLocaleString('en-US', { timeZone: 'UTC' }),
   }
-  
+
   try {
     return User.createNewUser(userToInsert)
   } catch (error) {
@@ -25,11 +33,19 @@ const createNewUser = (newUser) => {
 }
 
 const updateOneUser = (userId, changes) => {
-  return User.updateOneUser(userId, changes)
+  try {
+    return User.updateOneUser(userId, changes)
+  } catch (error) {
+    throw error
+  }
 }
 
 const deleteOneUser = (userId) => {
-  return User.deleteOneUser(userId)
+  try {
+    return User.deleteOneUser(userId)
+  } catch (error) {
+    throw error
+  }
 }
 
 export default {

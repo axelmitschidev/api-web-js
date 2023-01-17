@@ -1,13 +1,13 @@
 {
   "users": [
     {
-      "firstname": "a",
-      "lastname": "a",
-      "email": "a",
-      "password": "a",
-      "id": "24446a38-8efa-4937-9dfb-b6fbb015552e",
-      "createdAt": "1/12/2023, 11:32:09 PM",
-      "updatedAt": "1/12/2023, 11:32:09 PM"
+      "firstname": "Axel",
+      "lastname": "Mitschi",
+      "email": "axel.mitschi@gmail.com",
+      "password": "Azerty123",
+      "id": "a206f92d-cc9f-444f-ad19-4fe052bb72e5",
+      "createdAt": "1/17/2023, 12:09:31 AM",
+      "updatedAt": "1/17/2023, 12:09:31 AM"
     }
   ]
 }

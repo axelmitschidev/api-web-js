@@ -1,4 +1,4 @@
-# API WEB JS V0.1.0
+# API WEB JS V0.1.1
 
 Simple API WEB REST example for handle users with [Express.js](https://expressjs.com/).
 

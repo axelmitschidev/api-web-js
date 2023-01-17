@@ -3,17 +3,26 @@ import userService from '../services/user.service.js'
 const getAllUsers = (req, res) => {
   const users = userService.getAllUsers()
 
-  res.json({ status: 'OK', data: users })
+  try {
+    res.json({ status: 'OK', data: users })
+  } catch (error) {
+    res
+      .status(error?.status || 500)
+      .json({ status: 'FAILED', data: { error: error?.message || error } })
+  }
 }
 
 const getOneUser = (req, res) => {
   const { userId } = req.params
 
-  if (!userId) return
-
-  const user = userService.getOneUser(userId)
-
-  res.json({ status: 'OK', data: user })
+  try {
+    const user = userService.getOneUser(userId)
+    res.json({ status: 'OK', data: user })
+  } catch (error) {
+    res
+      .status(error?.status || 500)
+      .json({ status: 'FAILED', data: { error: error?.message || error } })
+  }
 }
 
 const createNewUser = (req, res) => {
@@ -40,9 +49,11 @@ const createNewUser = (req, res) => {
     const createdUser = userService.createNewUser(newUser)
     res.status(201).json({ status: 'OK', data: createdUser })
   } catch (error) {
-    res.status(error?.status || 500).json({ status: 'FAILED', data: { error: error?.message || error } })
+    res
+      .status(error?.status || 500)
+      .json({ status: 'FAILED', data: { error: error?.message || error } })
   }
-} 
+}
 
 const updateOneUser = (req, res) => {
   const {
@@ -50,21 +61,27 @@ const updateOneUser = (req, res) => {
     body,
   } = req
 
-  if (!userId) return
-
-  const updatedUser = userService.updateOneUser(userId, body)
-
-  res.json({ status: 'OK', data: updatedUser })
+  try {
+    const updatedUser = userService.updateOneUser(userId, body)
+    res.json({ status: 'OK', data: updatedUser })
+  } catch (error) {
+    res
+      .status(error?.status || 500)
+      .json({ status: 'FAILED', data: { error: error?.message || error } })
+  }
 }
 
 const deleteOneUser = (req, res) => {
   const { userId } = req.params
 
-  if (!userId) return
-
-  deleteOneUser(userId)
-
-  res.status(204).json({ status: 'OK' })
+  try {
+    deleteOneUser(userId)
+    res.status(204).json({ status: 'OK' })
+  } catch (error) {
+    res
+      .status(error?.status || 500)
+      .json({ status: 'FAILED', data: { error: error?.message || error } })
+  }
 }
 
 export { getAllUsers, getOneUser, createNewUser, updateOneUser, deleteOneUser }
